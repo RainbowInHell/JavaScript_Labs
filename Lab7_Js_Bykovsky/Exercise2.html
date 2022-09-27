@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function Second() {
+            let numbersCount = prompt("Введите количество чисел пожалуйста: ");
+            let maxBorder = prompt("Введите максимальное граничное значение для генерации чисел: ");
+
+            const array = Array.from({
+                length: numbersCount
+            }, () => Math.floor(Math.floor(Math.random() * maxBorder) - 0));
+
+            console.log(array);
+
+            array.sort((a, b) => b % 2 - a % 2 || a - b);
+
+            console.log(array);
+        }
+    </script>
+</head>
+
+<body>
+    <script>
+        Second()
+    </script>
+</body>
+
+</html>

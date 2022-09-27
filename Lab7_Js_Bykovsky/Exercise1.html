@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function First() {
+            let daysCount = prompt("Введите количество чисел пожалуйста: ");
+
+            if (daysCount > 27 && daysCount < 32) {
+
+                const arr = Array.from({
+                    length: daysCount
+                }, () => Math.floor(Math.floor(Math.random() * 41) - 20));
+
+
+                let negatives=arr.filter((el) => el < 0).length;
+
+                console.log(arr);
+                console.log(negatives);
+            }
+            else
+            {
+                console.log('Неверное количество дней!');
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <script>
+        First()
+    </script>
+</body>
+
+</html>
