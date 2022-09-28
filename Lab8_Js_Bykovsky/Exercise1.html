@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function First() {
+            let firstVal = prompt("Введите первое число пожалуйста: ");
+            let secondVal = prompt("Введите второе число пожалуйста: ");
+
+            if (firstVal < 0 || secondVal < 0 || /\D/.test(firstVal) || /\D/.test(secondVal))  {
+                alert("Invalid inputs!");
+            }
+            else {
+                //Алогритм Евклида с применением рекурсии
+                const GCD = (a, b) => b ? GCD(b, a % b) : a;
+                alert(GCD(firstVal, secondVal));
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <script>
+        First()
+    </script>
+</body>
+
+</html>
