@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+
+        function Third() {
+
+            let sum = 0;
+            let salaries = {
+                John: 100,
+                Ann: 160,
+                Pete: 130
+            }
+
+            for (const property in salaries) {
+                sum += salaries[property];
+            }
+
+            console.log(sum);
+        }
+
+    </script>
+</head>
+
+<body>
+    <script>
+        Third()
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+
+        let STUDENT = {
+            FIO : '',
+            GroupNumber : 0,
+            Marks : []
+        }
+
+        function printObject(obj) {
+            for (const property in obj) {
+                console.log(`${property}: ${obj[property]}`);
+            }
+        }
+
+        function isGoodStudent(obj){
+            if (obj.Marks.every(function(elem){return elem == 5 || elem == 4})){
+                return true;
+            }
+            return false;
+        }
+
+        function printStudents(arrayOfStudents){
+            if (arrayOfStudents.some(x => isGoodStudent(x))){
+                arrayOfStudents.filter(x => isGoodStudent(x)).forEach(x => printObject(x));
+            }
+            else{
+                console.log('Нет студентов c оценками только 4 и 5');
+                return;
+            }
+        }
+
+        function average(nums) {
+            return nums.reduce((a, b) => (a + b)) / nums.length;
+        }
+
+        function Individ() {
+
+            let i = 0;
+            let arrayOfStudents = [];
+
+            while (i < 10) {
+                let tempStudent = Object.create(STUDENT);
+                let marksCount = 0;
+
+                tempStudent.FIO = prompt("Введите ФИО");
+                tempStudent.GroupNumber = prompt("Введите номер группы");
+                tempStudent.Marks = Array.from({
+                    length: 5
+                }, () => prompt(`Введите оценку № ${++marksCount}`));
+
+                arrayOfStudents.push(tempStudent);
+                i++;
+            }
+
+            arrayOfStudents.sort((a, b) => (average(a.Marks) > average(b.Marks)) ? 1 : -1)
+            printStudents(arrayOfStudents);
+        }
+    </script>
+</head>
+
+<body>
+    <script>
+        Individ()
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function isEmpty(obj){
+            return Object.keys(obj).length === 0;
+        }
+
+        function Second() {
+            let emptyUser = {}
+
+            let notEmptyUser = {
+                name : 'John',
+                surname : 'Smith'
+            }
+
+            console.log(isEmpty(emptyUser));
+            console.log(isEmpty(notEmptyUser));
+        }
+
+    </script>
+</head>
+
+<body>
+    <script>
+        Second()
+    </script>
+</body>
+
+</html>

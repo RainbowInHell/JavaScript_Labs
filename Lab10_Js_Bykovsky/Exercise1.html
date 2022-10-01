@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function First() {
+            let emptyUser = {
+                name : 'John',
+                surname : 'Smith'
+            }
+
+            console.log("name до изменения: " + emptyUser.name);
+
+            emptyUser.name = 'Pete';
+
+            console.log("name после изменения: " + emptyUser.name);
+        }
+    </script>
+</head>
+
+<body>
+    <script>
+        First()
+    </script>
+</body>
+
+</html>

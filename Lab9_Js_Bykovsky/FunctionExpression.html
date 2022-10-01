@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+
+        const Foo = function () {
+            let y = 0;
+
+            let a = prompt("Введите a: ");
+            let b = prompt("Введите b: ");
+            let z = prompt("Введите z: ");
+            let x = prompt("Введите x: ");
+
+            if (x < 3.5 * a) {
+                y = a * b * x - Math.pow(Math.cos(z * x), 2);
+            }
+            else if (3.5 <= x <= b) {
+                y = Math.pow((a - x), 2) - Math.log(z + x);
+            }
+            else if (x > b) {
+                y = Math.sqrt(b * x - a + z * Math.pow(x, 2));
+            }
+            else {
+                alert("No answer!");
+            }
+
+            return y;
+        };
+
+    </script>
+</head>
+
+<body>
+    <script>
+        console.log(Foo());
+    </script>
+</body>
+
+</html>
