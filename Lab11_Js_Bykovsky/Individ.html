@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        //        Описать объект с именем STUDENT, содержащий поля: Name – фамилия и
+        //        инициалы, Kurs − курс, SES – успеваемость (массив из пяти элементов).
+        let STUDENT = {
+            Name: ''
+            , Kurs: 0
+            , Ses: []
+        }
+
+        function printObject(obj) {
+            for (const property in obj) {
+                console.log(`${property}: ${obj[property]}`);
+            }
+        }
+
+        function Individ() {
+
+            let i = 0;
+            let mainStudent = Object.create(STUDENT);
+            let marksCount = 0;
+
+            mainStudent.Name = prompt("Введите Имя");
+            mainStudent.Kurs = prompt("Введите курс");
+            mainStudent.Ses = Array.from({
+                length: 5
+            }, () => prompt(`Введите оценку № ${++marksCount}`));
+
+            console.log("Первоначальный объект: \n");
+            printObject(mainStudent);
+
+            let copyByReferenceStudent = mainStudent;
+            copyByReferenceStudent.Name = "Changed name";
+
+            console.log("Скопированный объект по ссылке (с измененным именем): \n");
+            printObject(copyByReferenceStudent);
+
+            console.log("Первоначальный объект после изменения скопированного объекта по ссылке: \n");
+            printObject(mainStudent);
+
+            let copyByValueStudent = Object.assign({}, mainStudent);
+            copyByValueStudent.Name = "SPARF";
+            console.log("Скопированный объект по значению (с измененным именем): \n");
+            printObject(copyByValueStudent);
+
+            console.log("Первоначальный объект после изменения скопированного объекта по значению: \n");
+            printObject(mainStudent);
+        }
+
+    </script>
+</head>
+
+<body>
+    <script>
+        Individ()
+    </script>
+</body>
+
+</html>
