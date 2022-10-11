@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        //        Описать объект с именем STUDENT, содержащий поля: Name – фамилия и
+        //        инициалы, Kurs − курс, SES – успеваемость (массив из пяти элементов).
+        let STUDENT = {
+            Name: ''
+            , Kurs: 0
+            , Ses: []
+        }
+
+        function printObject(obj) {
+            for (const property in obj) {
+                console.log(`${property}: ${obj[property]}`);
+            }
+        }
+
+        function Individ() {
+
+            let i = 0;
+            let mainStudent = Object.create(STUDENT);
+            let marksCount = 0;
+
+            mainStudent.Name = prompt("Введите Имя");
+            mainStudent.Kurs = prompt("Введите курс");
+            mainStudent.Ses = Array.from({
+                length: 5
+            }, () => prompt(`Введите оценку № ${++marksCount}`));
+
+            console.log("Первоначальный объект: \n");
+            printObject(mainStudent);
+
+            let copyByReferenceStudent = mainStudent;
+            copyByReferenceStudent.Name = "Changed name";
+
+            delete copyByReferenceStudent.Name;
+
+            copyByReferenceStudent = null;
+        }
+
+    </script>
+</head>
+
+<body>
+    <script>
+        Individ()
+    </script>
+</body>
+
+</html>
