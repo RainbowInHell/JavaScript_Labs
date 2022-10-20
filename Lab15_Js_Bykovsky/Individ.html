@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+
+        function Individ(string) {
+            var splitedString = string.split(' ');
+
+            if(splitedString.length - 1 == 1)
+                alert("");
+            else
+                alert(`${splitedString[0]}    ${splitedString[1]}`);
+        }
+
+    </script>
+</head>
+
+<body>
+    <script>
+            var string = prompt('Введите строку: ');
+            Individ(string);
+    </script>
+</body>
+
+</html>

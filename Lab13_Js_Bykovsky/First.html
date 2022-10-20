@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+
+        let calculator = {
+            x:0,
+            y:0,
+
+            read(x,y){
+                this.x = x;
+                this.y = y;
+            },
+
+            sum(){
+                return Number(this.x) + Number(this.y);
+            },
+
+            mul(){
+                return Number(this.x) * Number(this.y);
+            }
+        };
+
+        function First() {
+            let x = prompt(`Введите x`);
+            let y = prompt(`Введите y`);
+
+            calculator.read(x,y);
+
+            alert(`calculator.x = ${calculator.x}; calculator.y = ${calculator.y}`);
+            alert(`calculator.x + calculator.y = ${calculator.sum()}`);
+            alert(`calculator.x * calculator.y = ${calculator.mul()}`);
+        }
+
+    </script>
+</head>
+
+<body>
+    <script>
+        First()
+    </script>
+</body>
+
+</html>

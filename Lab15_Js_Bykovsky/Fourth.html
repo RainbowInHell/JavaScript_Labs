@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+        function truncate(string, maxLength) {
+            if (string.length > maxLength) {
+                var diff = string.length - maxLength;
+                var toConcat = ".".repeat(diff);
+
+                return string.substring(0, maxLength).concat(toConcat);
+            }
+            else{
+               return string;
+            }
+        }
+
+        function Fourth() {
+            var string = prompt('Введите строку: ');
+            var maxLenght = prompt('Введите максимальную длинну: ');
+            alert(truncate(string, Number(maxLenght)));
+        }
+    </script>
+</head>
+
+<body>
+    <script>
+        Fourth()
+    </script>
+</body>
+
+</html>

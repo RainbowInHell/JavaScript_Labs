@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+
+        function MyData(year, month, day) {
+
+            this.year = year;
+            this.month = --month;
+            this.day = day;
+
+            this.mainDate = new Date(year, month, day);
+
+
+            this.print = function (){
+                alert(this.mainDate.toLocaleDateString("ru-RU"));
+            };
+
+            this.addOneYear = function () {
+                this.mainDate.setFullYear(this.mainDate.getFullYear() + 1);
+            };
+
+            this.doubleDecreaseDay = function () {
+                this.mainDate.setDate( this.mainDate.getDate() - 2 );
+            };
+
+        }
+
+        function First() {
+
+            let year = Number(prompt("Введите год"));
+            let month = Number(prompt("Введите месяц"));
+            let day = Number(prompt("Введите день"));
+
+            var date = new MyData(year, month, day);
+
+            date.print();
+            date.addOneYear();
+
+            date.print();
+
+            date.doubleDecreaseDay();
+            date.print();
+        }
+
+    </script>
+</head>
+
+<body>
+    <script>
+        First()
+    </script>
+</body>
+
+</html>
